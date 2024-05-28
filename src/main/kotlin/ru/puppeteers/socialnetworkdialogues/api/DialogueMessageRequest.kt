@@ -1,4 +1,4 @@
-package ru.puppeteers.socialnetwork.api.dto.dialogue
+package ru.puppeteers.socialnetworkdialogues.api
 
 import java.util.*
 

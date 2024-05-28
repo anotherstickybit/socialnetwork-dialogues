@@ -1,4 +1,4 @@
-package ru.puppeteers.socialnetwork.entity
+package ru.puppeteers.socialnetworkdialogues.entity
 
 import java.time.LocalDateTime
 import java.util.*

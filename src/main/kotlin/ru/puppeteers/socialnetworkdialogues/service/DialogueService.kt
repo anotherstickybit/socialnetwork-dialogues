@@ -1,12 +1,12 @@
-package ru.puppeteers.socialnetwork.service
+package ru.puppeteers.socialnetworkdialogues.service
 
 import org.springframework.stereotype.Service
-import ru.puppeteers.socialnetwork.api.dto.dialogue.DialogueMessageRequest
-import ru.puppeteers.socialnetwork.api.dto.dialogue.DialogueRequest
-import ru.puppeteers.socialnetwork.api.dto.dialogue.DialogueResponse
-import ru.puppeteers.socialnetwork.api.dto.dialogue.ReadDialogueMessagesRequest
-import ru.puppeteers.socialnetwork.dao.DialogueDao
-import ru.puppeteers.socialnetwork.entity.DialogueMessageEntity
+import ru.puppeteers.socialnetworkdialogues.api.DialogueMessageRequest
+import ru.puppeteers.socialnetworkdialogues.api.DialogueRequest
+import ru.puppeteers.socialnetworkdialogues.api.DialogueResponse
+import ru.puppeteers.socialnetworkdialogues.api.ReadDialogueMessagesRequest
+import ru.puppeteers.socialnetworkdialogues.dao.DialogueDao
+import ru.puppeteers.socialnetworkdialogues.entity.DialogueMessageEntity
 
 @Service
 class DialogueService(

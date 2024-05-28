@@ -1,12 +1,12 @@
-package ru.puppeteers.socialnetwork.dao
+package ru.puppeteers.socialnetworkdialogues.dao
 
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import ru.puppeteers.socialnetwork.entity.DialogueMessageEntity
-import ru.puppeteers.socialnetwork.exception.DialogueCreationException
-import ru.puppeteers.socialnetwork.exception.DialogueMessageCreationException
-import ru.puppeteers.socialnetwork.exception.DialogueMessageReadException
+import ru.puppeteers.socialnetworkdialogues.entity.DialogueMessageEntity
+import ru.puppeteers.socialnetworkdialogues.exception.DialogueCreationException
+import ru.puppeteers.socialnetworkdialogues.exception.DialogueMessageCreationException
+import ru.puppeteers.socialnetworkdialogues.exception.DialogueMessageReadException
 import java.util.*
 
 @Service

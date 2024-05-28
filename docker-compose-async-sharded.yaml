@@ -46,50 +46,20 @@ services:
       - RABBITMQ_DEFAULT_USER=rmuser
       - RABBITMQ_DEFAULT_PASS=rmpassword
 
-  pgadmin:
-    container_name: pgadmin_container
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
-      PGADMIN_DEFAULT_PASSWORD: admin
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-      GUNICORN_ACCESS_LOGFILE: /dev/null
-    ports:
-      - "5050:80"
-    links:
-      - "db-master"
-    volumes:
-      - ./db/backup:/backup
-    logging:
-      driver: none
-
-  redis:
-    image: redis:7.2.4-alpine
-    ports:
-      - "6379:6379"
-    environment:
-      - REDIS_PORT=6379
-
   backend:
     build:
       args:
-        JAR_FILE: build/libs/socialnetwork-1.0.jar
+        JAR_FILE: build/libs/socialnetwork-dialogues-1.0.jar
     ports:
       - "8080:8080"
     depends_on:
-      db-master:
+      master:
         condition: service_healthy
-      db-slave-1:
+      worker:
         condition: service_healthy
-      db-slave-2:
+      manager:
         condition: service_healthy
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-master:5432/sn
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://master:5432/sn
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
-      - RABBIT_HOST=rabbit
-      - RABBIT_PORT=5672
-      - RABBIT_USERNAME=rmuser
-      - RABBIT_PASSWORD=rmpassword
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379

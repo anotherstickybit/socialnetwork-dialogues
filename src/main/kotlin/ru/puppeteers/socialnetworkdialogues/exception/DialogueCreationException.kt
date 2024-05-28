@@ -1,4 +1,4 @@
-package ru.puppeteers.socialnetwork.exception
+package ru.puppeteers.socialnetworkdialogues.exception
 
 import lombok.experimental.StandardException
 
